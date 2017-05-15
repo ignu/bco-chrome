@@ -1,12 +1,31 @@
 {
-  "name": "Chrome Extension Webpack",
+  "name": "BCO Customizer",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
   },
+  "author": "Len Smith",
   "browser_action": {
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://boardcrewcial.org/*"],
+      "js": ["content.bundle.js"]
+    },
+    {
+      "matches": ["https://boardcrewcial.org/*"],
+      "css": ["content.bundle.css"]
+    }
+ ],
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "contextMenus",
+    "notifications",
+    "https://boardcrewcial.org/"
+  ],
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
