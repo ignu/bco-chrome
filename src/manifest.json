@@ -11,11 +11,11 @@
   "content_scripts": [
     {
       "matches": ["https://boardcrewcial.org/*"],
-      "js": ["content.bundle.js"]
+      "css": ["content.css"]
     },
     {
       "matches": ["https://boardcrewcial.org/*"],
-      "css": ["content.bundle.css"]
+      "js": ["jquery.js", "content.bundle.js"]
     }
  ],
   "permissions": [
@@ -24,6 +24,9 @@
     "contentSettings",
     "contextMenus",
     "notifications",
+    "activeTab",
+    "tabs",
+    "storage",
     "https://boardcrewcial.org/"
   ],
   "manifest_version": 2,

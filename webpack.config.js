@@ -4,6 +4,7 @@ var webpack = require("webpack"),
     env = require("./utils/env"),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
     WriteFilePlugin = require("write-file-webpack-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // load the secrets
 var alias = {};
@@ -19,8 +20,7 @@ var options = {
     popup: path.join(__dirname, "src", "js", "popup.js"),
     options: path.join(__dirname, "src", "js", "options.js"),
     background: path.join(__dirname, "src", "js", "background.js"),
-    content: path.join(__dirname, "src", "js", "content.js"),
-    content: path.join(__dirname, "src", "css", "content.css")
+    content: path.join(__dirname, "src", "js", "content.js")
   },
   output: {
     path: path.join(__dirname, "build"),
@@ -54,7 +54,12 @@ var options = {
       filename: "background.html",
       chunks: ["background"]
     }),
-    new WriteFilePlugin()
+    new WriteFilePlugin(),
+    new CopyWebpackPlugin([
+        { from: 'src/css/content.css', to: 'content.css' },
+        { from: 'src/jquery.js', to: 'jquery.js' },
+      ])
+
   ]
 };
 

@@ -1,3 +1,30 @@
 .title {
-  border: 2px solid red;
+  display: none;
+  padding: 3px;
+}
+
+body {
+  padding: 5px;
+  font-size: 1em;
+}
+
+li {
+  padding: 4px;
+}
+
+li.lastpost {
+  display: none;
+}
+
+li.subject {
+  width: 77%;
+}
+
+ul.nav li a  {
+  padding: 0px;
+  color: #333;
+}
+
+.subtitle {
+  display: none;
 }
