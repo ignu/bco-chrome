@@ -3,13 +3,29 @@
   padding: 3px;
 }
 
+.title span.smaller {
+  display: none;
+}
+
+ul.nav.top {
+  min-height: 39px;
+}
+
 body {
   padding: 5px;
   font-size: 1em;
 }
 
-li {
-  padding: 4px;
+div.small.clear {
+  display: none;
+}
+
+.searchwrap {
+  display: none;
+}
+
+ul.list li {
+  padding: 8px 0px;
 }
 
 li.lastpost {

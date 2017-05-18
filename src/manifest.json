@@ -5,9 +5,6 @@
     "page": "background.html"
   },
   "author": "Len Smith",
-  "browser_action": {
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["https://boardcrewcial.org/*"],
