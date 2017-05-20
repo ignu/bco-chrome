@@ -11,9 +11,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 });
 
 const removeBannedWords = function() {
-  console.log("bannedWords", bannedWords);
   bannedWords.forEach(function(word) {
-    console.log("word", word);
     $("ul.view:contains(" + word + ")").hide();
   });
 };
@@ -39,15 +37,16 @@ const showTitle = () => {
     title.style.opacity = 1;
   });
 };
+
 showTitle();
 
-const userNameRegex = /\b@([a-zA-Z0-9]+)\b/g;
+const userNameRegex = /(\s|^)@([a-zA-Z0-9]+)/g;
 
 const linkHashtags = () => {
   function replaceHashtags(text) {
     return text.replace(
       userNameRegex,
-      '<a class="username" href="http://twitter.com/$1">@$1</a>'
+      '<a class="username" href="http://twitter.com/$2">@$2</a>'
     );
   }
 
