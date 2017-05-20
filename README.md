@@ -1,13 +1,9 @@
-# BCO Chrome Extensions
+# 🚀 BCO Chrome Extension
 
-### Features
+### Current Features
 
 * Auto-Link Twitter Names
-* Remove a lot of MetaData I never read
-* Change Board Title
-* Block posts by word
-
-### Soon
-
-* Implement ABP Feature
-* Buttons to paste images pre-wrapped in `[spoiler][img]`
+* CSS Tweaks
+* Remove some noisy HTML elements
+* Customize
+* Hide posts matching a certain string. (Helpful for when people quote posters on your ignore list)
