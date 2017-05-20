@@ -1,4 +1,4 @@
-const VERSION = "0.0.3";
+const VERSION = "0.0.4";
 console.log("Starting BCO Customizer Plugin... 🚀", VERSION);
 
 let bannedWords = [];
@@ -39,6 +39,16 @@ const showTitle = () => {
 };
 
 showTitle();
+
+showColumnsOnSearch = () => {
+  const isSearch = window.location.pathname.includes("search");
+
+  if(isSearch) {
+    $(".subject").css({width: "47%"})
+    $(".lastpost").show()
+  }
+}
+$(showColumnsOnSearch)
 
 const userNameRegex = /(\s|^)@([a-zA-Z0-9]+)/g;
 

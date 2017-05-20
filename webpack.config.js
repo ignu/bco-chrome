@@ -58,6 +58,10 @@ var options = {
     new CopyWebpackPlugin([
         { from: 'src/css/content.css', to: 'content.css' },
         { from: 'src/jquery.js', to: 'jquery.js' },
+        { from: 'src/icon128.png', to: 'icon128.png' },
+        { from: 'src/icon48.png', to: 'icon48.png' },
+        { from: 'src/icon32.png', to: 'icon32.png' },
+        { from: 'src/icon16.png', to: 'icon16.png' }
       ])
 
   ]
