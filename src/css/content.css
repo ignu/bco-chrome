@@ -1,6 +1,9 @@
 .title {
-  display: none;
+  opacity: 0;
+  height: 29px;
   padding: 3px;
+  transition: opacity 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .title span.smaller {

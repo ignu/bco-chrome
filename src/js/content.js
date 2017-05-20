@@ -13,7 +13,7 @@ const showTitle = () => {
       }
     }
 
-    title.style.display = "block"
+    title.style.opacity = 1
   })
 
 }
