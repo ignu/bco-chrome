@@ -1,21 +1,28 @@
 import "../css/options.css";
 console.debug("🚀 BCO Options running... ")
+const PROPS = ['title', 'banned']
 
 const $$ = (s) => document.getElementById(s);
 const update = () => {
-  const input = $$("title")
-  console.log('input', input)
-  chrome.storage.sync.set({title: input.value})
+  const title = $$("title")
+  const banned = $$("banned")
+  chrome.storage.sync.set({title: title.value, banned: banned.value})
 
   const text = "🚀  Settings updated.";
   const message = $$("message")
   message.style.display = "block";
   message.innerText = text;
-  console.debug(text)
 };
 
-chrome.storage.sync.get('title', (data) => {
-  $$("title").value = data.title
+chrome.storage.sync.get(PROPS, (data) => {
+  const update = (prop) => {
+    console.log('prop, data', prop, data)
+    if(data[prop]) {
+      $$(prop).value = data[prop]
+    }
+  }
+
+  PROPS.forEach(update)
 })
 
 const button = document.getElementById("save");

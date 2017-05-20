@@ -10,11 +10,12 @@ label {
   display: block;
   font-size: 1.3em;
   margin-bottom: 2px;
+  margin-top: 19px;
 }
 
 #message {
   -webkit-animation: fadein 0.4s;
-  animation: fadein 2s;
+  animation: fadein 0.4s;
   font-size: 1.5em;
   display: none;
   background: #555;
