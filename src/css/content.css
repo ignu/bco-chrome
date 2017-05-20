@@ -11,12 +11,15 @@
 }
 
 ul.nav.top {
-  min-height: 39px;
+  min-height: 29px;
+}
+
+ul.nav.top li {
+  padding: 1px
 }
 
 body {
   padding: 5px;
-  font-size: 1em;
 }
 
 div.small.clear {
@@ -37,11 +40,6 @@ li.lastpost {
 
 li.subject {
   width: 77%;
-}
-
-ul.nav li a  {
-  padding: 0px;
-  color: #333;
 }
 
 .subtitle {
