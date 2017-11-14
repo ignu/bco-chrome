@@ -1,4 +1,4 @@
-const VERSION = "0.0.4";
+const VERSION = "0.0.7";
 console.log("Starting BCO Customizer Plugin... 🚀", VERSION);
 
 let bannedWords = [];
@@ -15,6 +15,21 @@ const removeBannedWords = function() {
     $("ul.view:contains(" + word + ")").hide();
   });
 };
+
+const updateTrumpDate = function() {
+  const trumpy = $('h3:contains("1360 More Days"), a:contains("1360 More Days")')
+
+  if(!trumpy.length) return
+
+  let title = trumpy.text()
+
+  const jan2021 = new Date(2021, 0, 20)
+
+  const daysLeft = Math.round((jan2021-(new Date()))/(1000*60*60*24));
+
+  trumpy.text(title.replace('1360', daysLeft))
+}
+$(updateTrumpDate)
 
 const showTitle = () => {
   const title = document.getElementsByClassName("title")[0];
@@ -56,7 +71,7 @@ const linkHashtags = () => {
   function replaceHashtags(text) {
     return text.replace(
       userNameRegex,
-      '<a class="username" href="http://twitter.com/$2">@$2</a>'
+      '$1<a class="username" href="http://twitter.com/$2">@$2</a>'
     );
   }
 
